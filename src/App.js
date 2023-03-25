@@ -4,7 +4,7 @@ import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="">
+    <div className="flexbox">
       <Main></Main>
     </div>
   );
