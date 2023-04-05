@@ -1,11 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Main from "./components/Main";
+import Main from "./components/Main.js";
 
 function App() {
   return (
-    <div className="flexbox">
+    <div className="root">
       <Main></Main>
+      <div className="fixed-bottom border container-fluid h-5 bg-light">
+        <h2>Hello</h2>
+      </div>
     </div>
   );
 }

@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Icon extends Component {
   render() {
     return (
-      <figure className="figure">
-        <div class="d-flex align-items-center flex-start flex-column container mt-5">
+      <figure className="figure iconHover ps-2 pe-2">
+        <div className="d-flex align-items-center flex-start flex-column ">
           <img
             src={this.props.image}
             className="figure-img img-fluid rounded"

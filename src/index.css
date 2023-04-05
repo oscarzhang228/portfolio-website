@@ -8,6 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.iconHover:hover {
+  background-color: dimgray;
+  transition: 500ms;
+}
+
 * {
   margin: 0;
   padding: 0;
