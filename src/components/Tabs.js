@@ -2,6 +2,12 @@ import { Component } from "react";
 import notepad from "./images/icons8-notepad-48.png";
 import TabCloseButton from "./TabCloseButton";
 class Tabs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hello: false,
+    };
+  }
   render() {
     return (
       <div
@@ -17,13 +23,14 @@ class Tabs extends Component {
               src={notepad}
               className="img-fluid me-2"
               style={{ height: "1.1rem" }}
+              alt="Notepad icon"
             ></img>
             <h1
               className="fs-6 text-light me-4 pt-1 mt-1 text-light pe-5"
               style={{
                 fontSize: "16px",
                 whiteSpace: "nowrap",
-                lineHeight: "24px;",
+                lineHeight: "24px",
               }}
             >
               Hello
@@ -33,7 +40,10 @@ class Tabs extends Component {
             </span>
           </div>
         </div>
-        <div className="ms-auto d-flex align-items-center">
+        <div
+          className="ms-auto d-flex align-items-center"
+          onClick={() => this.props.hideBrowsers()}
+        >
           <TabCloseButton></TabCloseButton>
         </div>
       </div>

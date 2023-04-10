@@ -5,9 +5,7 @@ import notepad from "./images/icons8-notepad-48.png";
 import instagram from "./images/icons8-instagram-48.png";
 import Application from "./Application";
 import React from "react";
-import ReactDom from "react-dom";
-import ReactDomClient from "react-dom/client";
-
+import { createRoot } from "react-dom/client";
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -15,10 +13,16 @@ class Main extends Component {
       doubleClicked: false,
     };
   }
-  openIcon(openElem) {
+  openIcon(item) {
     if (this.state.doubleClicked) {
-      const root = ReactDomClient.createRoot(document.getElementById("root"));
-      root.render(React.createElement(Application));
+      const root = createRoot(document.getElementById("root"));
+      const elem = (
+        <Application
+          hideBrowser={this.hideBrowser}
+          item={this.item}
+        ></Application>
+      );
+      root.render(elem);
     } else {
       this.setState({ doubleClicked: true });
       setTimeout(() => {
@@ -33,16 +37,20 @@ class Main extends Component {
           <div className="row">
             <div
               className="col-sm-4 d-flex justify-content-center vh-100 align-items-center"
-              onClick={() => this.openIcon("Application")}
+              onClick={() => this.openIcon("projects")}
             >
               <Icon caption="Projects" image={chrome}></Icon>
             </div>
-            <div className="col-sm-4 d-flex justify-content-center vh-100 align-items-center">
-              {" "}
+            <div
+              className="col-sm-4 d-flex justify-content-center vh-100 align-items-center"
+              onClick={() => this.openIcon("bio")}
+            >
               <Icon caption="Bio" image={notepad}></Icon>
             </div>
-            <div className="col-sm-4  d-flex justify-content-center vh-100 align-items-center">
-              {" "}
+            <div
+              className="col-sm-4  d-flex justify-content-center vh-100 align-items-center"
+              onClick={() => this.openIcon("projects")}
+            >
               <Icon caption="Socials" image={instagram}></Icon>
             </div>
           </div>
