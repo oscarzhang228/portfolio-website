@@ -17,10 +17,7 @@ class Main extends Component {
     if (this.state.doubleClicked) {
       const root = createRoot(document.getElementById("root"));
       const elem = (
-        <Application
-          hideBrowser={this.hideBrowser}
-          item={this.item}
-        ></Application>
+        <Application hideBrowser={this.hideBrowser} item={item}></Application>
       );
       root.render(elem);
     } else {
@@ -37,21 +34,24 @@ class Main extends Component {
           <div className="row">
             <div
               className="col-sm-4 d-flex justify-content-center vh-100 align-items-center"
-              onClick={() => this.openIcon("projects")}
+              onClick={() => this.openIcon("Projects")}
             >
               <Icon caption="Projects" image={chrome}></Icon>
             </div>
             <div
               className="col-sm-4 d-flex justify-content-center vh-100 align-items-center"
-              onClick={() => this.openIcon("bio")}
+              onClick={() => this.openIcon("Bio")}
             >
               <Icon caption="Bio" image={notepad}></Icon>
             </div>
-            <div
-              className="col-sm-4  d-flex justify-content-center vh-100 align-items-center"
-              onClick={() => this.openIcon("projects")}
-            >
-              <Icon caption="Socials" image={instagram}></Icon>
+            <div className="col-sm-4  d-flex justify-content-center vh-100 align-items-center">
+              <a
+                href="https://linktr.ee/oscarzhang228"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Icon caption="Socials" image={instagram}></Icon>
+              </a>
             </div>
           </div>
         </div>

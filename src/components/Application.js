@@ -3,6 +3,7 @@ import Tabs from "./Tabs";
 import Search from "./Search";
 import { createRoot } from "react-dom/client";
 import Main from "./Main";
+import Browser from "./Browser";
 class Application extends Component {
   constructor(props) {
     super(props);
@@ -19,9 +20,13 @@ class Application extends Component {
     return (
       <div>
         {this.state.visible && (
-          <Tabs hideBrowsers={this.hideBrowser.bind(this)}></Tabs>
+          <Tabs
+            hideBrowsers={this.hideBrowser.bind(this)}
+            item={this.props.item}
+          ></Tabs>
         )}
         {this.state.visible && <Search></Search>}
+        {this.state.visible && <Browser item={this.props.item}></Browser>}
       </div>
     );
   }
