@@ -1,5 +1,6 @@
 import { Component } from "react";
 import photo from "./images/OZ_photo.JPG";
+import Project from "./Project";
 class Browser extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ class Browser extends Component {
             </h1>
             <h4
               className="ms-5 me-5 text-light"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: 18 }}
             >
               As an rising second-year student at Georgia Tech, I'm passionate
               about creating beautiful and engaging websites using modern web
@@ -52,11 +53,7 @@ class Browser extends Component {
             </h4>
           </div>
         )}
-        {this.state.projects && (
-          <div>
-            <h1>hi</h1>
-          </div>
-        )}
+        {this.state.projects && <div className="d-flex flex-column g-2"></div>}
       </div>
     );
   }
